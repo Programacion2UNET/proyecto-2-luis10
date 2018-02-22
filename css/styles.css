@@ -1,15 +1,27 @@
-input, select, label {
-	margin: 5px;
-	margin-bottom: 30px;
-	padding-top: 5px;
-	width: 50%;
-	margin-left: 25%;
+html{
+	background-color: green;
 }
-
 h1 {
+	color: white;
 	text-align: center;
 }
-
+h2{
+	color: white;
+	text-align: center;
+}
+table{
+	position: absolute;
+	left: 40%;
+	top: 25%;
+}
+.area{
+	
+}
+.acceso{
+   
+    width: 100px;
+    height: 50px;
+}
 #principal {
 	margin-left: 25%;
 	padding: 5px 5px 5px 25px;
@@ -17,4 +29,5 @@ h1 {
 	border-radius: 50px;
 	box-shadow: 10px 10px 25px 0px #999999;
 	width: 50%;
+	height: 200px;
 }

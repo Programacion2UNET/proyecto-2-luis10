@@ -3,26 +3,68 @@
 <head>
 	<title>Iniciar Sesion</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<style type="text/css">
+	html{
+		background-color: green;
+	}
+	h1 {
+		color: white;
+		text-align: center;
+	}
+	h2{
+		color: white;
+		text-align: center;
+	}
+	table{
+		position: absolute;
+		left: 40%;
+		top: 25%;
+	}
+	.area{
+		
+	}
+	.acceso{
+	   
+	    width: 100px;
+	    height: 50px;
+	}
+	#principal {
+		margin-left: 25%;
+		padding: 5px 5px 5px 25px;
+		background-color: #88BEFB;
+		border-radius: 50px;
+		box-shadow: 10px 10px 25px 0px #999999;
+		width: 50%;
+		height: 200px;
+	}
+	</style>
 </head>
 
 <body>
-	<h1>INICIAR SESION</h1>
+	<h1>Sistema de inscripcion de Torneos Deportivos</h1>
+	 <h2>Iniciar sesion</h2>
 	
 	<div id="principal">
 	
 	<form>
-		<label>Nombre de usuario:</label>
-		<br>
-		<input type="text" name="usuario">
-		<br>
-		<label>Contraseña:</label>
-		<br>
-		<input type="password" name="contra">
-		<br>
-		<input type="submit" name="iniciar" value="Iniciar Sesion">
-		<br>
-		<input type="button" value="Registrarse" onclick="window.open('registro.php')" />
+
+		<table>
+			
+			<tr>
+				<td><label class="acceso">Nombre de usuario:</label></td>
+				<td><input type="text" name="usuario" placeholder="usuario" class="area"></td>
+			</tr>
+            	<tr>
+				<td><label class="acceso">Contraseña:</label></td>
+				<td><input type="password" name="contra" placeholder="Contraseña" class="area"></td>
+			</tr>
+            <tr>
+          	   <td><input type="submit" name="iniciar" value="Iniciar Sesion"></td>
+			   <td><input type="button" value="Registrarse" onclick="window.open('registro.php')" /></td>
+            </tr>
+		</table>
+
+		
 		
 		
 	</form>
