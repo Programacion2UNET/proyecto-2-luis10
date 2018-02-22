@@ -37,7 +37,25 @@
 		width: 50%;
 		height: 200px;
 	}
+	 .accseso{
+
+     	 text-decoration: none;
+     	 font-size: 30px;
+         color: white;
+     }
+      a:hover{
+     	color: black;
+     }
+     #registro{
+     	position: absolute;
+		left: 45%;
+		top: 40%;
+     }
 	</style>
+	<script type="text/javascript">
+		
+
+	</script>
 </head>
 
 <body>
@@ -46,27 +64,27 @@
 	
 	<div id="principal">
 	
-	<form>
+	<form action="verificacion.php" method="post">
 
 		<table>
 			
 			<tr>
-				<td><label class="acceso">Nombre de usuario:</label></td>
-				<td><input type="text" name="usuario" placeholder="usuario" class="area"></td>
-			</tr>
-            	<tr>
-				<td><label class="acceso">Contraseña:</label></td>
-				<td><input type="password" name="contra" placeholder="Contraseña" class="area"></td>
+				<td><label for="usuario" class="acceso">Nombre de usuario:</label></td>
+				<td><input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" class="area"></td>
 			</tr>
             <tr>
-          	   <td><input type="submit" name="iniciar" value="Iniciar Sesion"></td>
-			   <td><input type="button" value="Registrarse" onclick="window.open('registro.php')" /></td>
+			    <td><label for="clave">Clave :</label></td>
+                <td><input type="text" id="clave" name="clave" placeholder="Ingresa tu clave"></td>
+			</tr>
+            <tr>
+          	   <td><input type="submit" name="enviar" value="Iniciar Sesion"></td>
+	 
             </tr>
 		</table>
-
-		
-		
-		
+           <div id="registro">
+           <a class="accseso" href="resgistar_equipo.html">Registrase</a>
+           </div>
+	
 	</form>
 
 	</div>
