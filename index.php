@@ -11,7 +11,7 @@
 	
 	<div id="principal">
 	<?php 
-		$db_host="localhost";
+		/*$db_host="localhost";
 		$bd="prueba";
 		$dbu="root";
 		$dbc="";
@@ -37,7 +37,7 @@
 		
 
 		echo $fila[0];
-
+		*/
 	 ?>
 	<form>
 		<label>Nombre de usuario:</label>
@@ -50,8 +50,9 @@
 		<br>
 		<input type="submit" name="iniciar" value="Iniciar Sesion">
 		<br>
-		<input type="button" name="registro" href="registro.php" value="Registrarse">
-		<a href="registro.php">XXX</a>
+		<input type="button" value="Registrarse" onclick="window.open('registro.php')" />
+		
+		
 	</form>
 
 	</div>
