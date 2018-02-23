@@ -33,15 +33,18 @@
 	 if($ecn==true && ($usuario!="#".$auxausuario && $clave!="1234") ){
 		
 	   $resultado->closeCursor();
+	   $base=null;
 
 	  header('Location:registro_torneo.php');
 	}
 	else if($ecn){
 		$resultado->closeCursor();
+		$base=null;
 	  header('Location:acceso_admin.php');
 	}
 	else {
 	  $resultado->closeCursor();
+	  $base=null;
 	    header('Location:portada.html');
 	}
    }
