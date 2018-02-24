@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-02-2018 a las 01:43:11
+-- Tiempo de generación: 24-02-2018 a las 07:57:11
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -41,11 +41,8 @@ CREATE TABLE `datos_usuarios` (
 --
 
 INSERT INTO `datos_usuarios` (`Nombre_Equipo`, `fecha_creacion`, `dir_responsable`, `correo`, `sitio_web`, `usuario`, `clave`) VALUES
-('', '', 'VENEZUELA', 'FACIL@GMAIL.COM', '', '#william', '1234'),
-('barcelona', '2018-02-21', 'barrio el lago', 'sapo', 'sapo', 'sapo', '14'),
-('', '', '', '', '', '', ''),
-('c', '', '', '', '', 'c', ''),
-(NULL, NULL, NULL, NULL, NULL, 'alex', '1547');
+(NULL, NULL, NULL, NULL, NULL, '#ojoblanco', '1234'),
+('barcelona', '2018-02-14', 'espa?a', 'barcelona@gmail.com', 'barcelona.com', 'barcelona', '1547');
 
 -- --------------------------------------------------------
 
@@ -65,6 +62,13 @@ CREATE TABLE `registro_torneo` (
   `dir_resp` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `correo` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `registro_torneo`
+--
+
+INSERT INTO `registro_torneo` (`torneo`, `categoria`, `cant_jugadores`, `usuario`, `clave`, `nom_equipo`, `fecha_creacion`, `web`, `dir_resp`, `correo`) VALUES
+('basquet', 'aficiaonado', '11', 'barcelona', '1547', 'barcelona', '2018-02-14', 'barcelona.com', 'espa?a', 'barcelona@gmail.com');
 
 -- --------------------------------------------------------
 
