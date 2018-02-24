@@ -24,16 +24,20 @@
       	  color: white;
       	  font-family: cursive;
          }
-
+         .boton{
+		   position:absolute;
+		   left:40%;
+		   top:60%;
+		 }
 		</style>
         <script src="jquery-3.2.1.min.js"></script>
          <script type="text/javascript">
 		
 
 		
-         function imprimir() {
-           
-            document.write(" <form action=''  method='post' id='formulario'><table><tr><td><label for='torneo'>Torneo</label></td> <td><select id='torneo'><option id='lista'></option></select> </td>      </tr>      <tr>         <td><label for='cant'>participantes</label></td>         <td><input type='text' name='cant' id='cant' placeholder='cantidad de participantes'></td>     </tr>     <tr>            <td> <label for='cate'>categoria :</label></td>           <td><select>              <option>principiante</option>              <option>aficiaonado</option>              <option>profesional</option>          </select></td>     <tr>                  <tr>              <td><label for='usuario'>Usuario:</label></td>                <td><input type='text' id='usuario' name='usuario' placeholder='Ingresa tu usuario' disabled='true' value='usuario'></td>            </tr>           <tr>              <td><label for='clave'>Clave :</label></td>                <td><input type='text' id='clave' name='clave' placeholder='Ingresa tu clave' disabled='true' value='clave'></td>            </tr>     <tr>       <td><input type='submit' value='registrar'  /></td>     </tr>     </table>     </form>");   
+         function imprimir(usuario,clave) {
+         
+            document.write(" <form action='registrar.php'  method='post' id='formulario'><table><tr><td><label for='torneo'>Torneo</label></td> <td><select id='torneo'><option id='lista'></option></select> </td>      </tr>      <tr>         <td><label for='cant'>participantes</label></td>         <td><input type='text' name='cant' id='cant' placeholder='cantidad de participantes'></td>     </tr>     <tr>            <td> <label for='cate'>categoria :</label></td>           <td><select>              <option>principiante</option>              <option>aficiaonado</option>              <option>profesional</option>          </select></td>     <tr>                  <tr>              <td><label for='usuario' style='visibility:hidden'>Usuario:</label></td>                <td><input type='text' id='usuario' name='usuario' placeholder='Ingresa tu usuario' disabled='true' value="+usuario+" style='visibility:hidden'></td>            </tr>           <tr>              <td><label for='clave' style='visibility:hidden'>Clave :</label></td>                <td><input type='text' id='clave' name='clave' placeholder='Ingresa tu clave' disabled='true' value="+clave+" style='visibility:hidden'></td>            </tr>     <tr>       <td><input class='boton' type='submit' value='registrar'  /></td>     </tr>     </table>     </form>");   
 		 
 		 // document.writeln(arrayJS[0]);
 		 
@@ -44,11 +48,14 @@
           /*  $("#lista").after("<option>"+num+"</option>");//asignar variables que pro      
           	$("#lista").after("<option>basquet</option>");    
 			      $("#lista").remove(); */  
-
+               
 		  }
 		 function insertar(torneo){
 			  $("#lista").after("<option>"+torneo+"</option>");
-			 //  $("#lista").remove();
+			 
+		}
+		function eliminar(){
+		 $("#lista").remove();	
 		}
       </script>
   
@@ -59,9 +66,10 @@
      <h1>Registro de Torneo</h1>
 
      <?php
-            $num=12345;
-			 //$usuario=$_POST["usuario"];
-			 //$clave=$_POST["clave"];
+	 		
+           
+			$usuario=$_POST["usuario"];
+			$clave=$_POST["clave"];
 			$db_host="localhost";
 			$db_nombre="torneo_dep";
 			$db_usuario="root";
@@ -96,11 +104,13 @@
 			  mysqli_close($coneccion);
          
 			  if($ecn){
-				  echo"<script>imprimir()</script>";
+				  echo"<script>imprimir('$usuario','$clave')</script>";
 				  for($v=1;$v<count($torneo);$v++){
 				   echo "<script>insertar('$torneo[$v]')</script>";
 				  }
+				  echo "<script>eliminar();</script>";
 			  }
+			 
 			  
      ?>
      

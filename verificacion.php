@@ -34,8 +34,18 @@
 		
 	   $resultado->closeCursor();
 	   $base=null;
-
-	  header('Location:registro_torneo.php');
+      echo"<form action='registro_torneo.php' method='post'>    
+	         <table>   
+			 <tr>   
+			   <td><input type='text' id='usuario' name='usuario' value='$usuario'   style='visibility:hidden'></input><td/>  
+			    <td><input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input></td>
+			  </tr>	
+			  <tr>
+			    <input type='submit' value='continuar'/>
+			  </tr>
+			  </table>
+		</form>";
+	 // header('Location:registro_torneo.php');
 	}
 	else if($ecn){
 		$resultado->closeCursor();
