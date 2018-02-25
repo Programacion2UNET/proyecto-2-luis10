@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iniciar Sesion</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	html{
+		background-color: green;
+	}
+	h1 {
+		color: white;
+		text-align: center;
+	}
+	h2{
+		color: white;
+		text-align: center;
+	}
+	table{
+		position: absolute;
+		left: 40%;
+		top: 25%;
+	}
+	.area{
+		
+	}
+	.acceso{
+	   
+	    width: 100px;
+	    height: 50px;
+	}
+	#principal {
+		margin-left: 25%;
+		padding: 5px 5px 5px 25px;
+		background-color: #88BEFB;
+		border-radius: 50px;
+		box-shadow: 10px 10px 25px 0px #999999;
+		width: 50%;
+		height: 200px;
+	}
+	 .accseso{
+
+     	 text-decoration: none;
+     	 font-size: 30px;
+         color: white;
+     }
+      a:hover{
+     	color: black;
+     }
+     #registro{
+     	position: absolute;
+		left: 45%;
+		top: 40%;
+     }
+	</style>
+	<script type="text/javascript">
+		
+
+	</script>
+</head>
+
+<body>
+	<h1>Sistema de inscripcion de Torneos Deportivos</h1>
+	 <h2>Iniciar sesion</h2>
+	
+	<div id="principal">
+	
+	<form action="verificacion.php" method="post">
+
+		<table>
+			
+			<tr>
+				<td><label for="usuario" class="acceso">Nombre de usuario:</label></td>
+				<td><input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" class="area"></td>
+			</tr>
+            <tr>
+			    <td><label for="clave">Clave :</label></td>
+                <td><input type="text" id="clave" name="clave" placeholder="Ingresa tu clave"></td>
+			</tr>
+            <tr>
+          	   <td><input type="submit" name="enviar" value="Iniciar Sesion"></td>
+	 
+            </tr>
+		</table>
+           <div id="registro">
+           <a class="accseso" href="resgistar_equipo.html">Registrase</a>
+           </div>
+	
+	</form>
+
+	</div>
+
+	
+</body>
+
+</html>
