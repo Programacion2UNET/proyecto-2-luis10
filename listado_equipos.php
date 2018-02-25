@@ -8,6 +8,7 @@
 
 <body>
 <?php
+    echo"<h1>Listado de equipos registrados</h1>";
 	try{
     $base=new PDO('mysql:host=localhost; dbname=torneo_dep','root','');
 	$base->exec("SET CHARACTER SET utf8");

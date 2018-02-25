@@ -60,16 +60,19 @@
 	}
 	else{
 		//echo "si se puede registrar";
-		$SQLI="SELECT * FROM registro_torneo where usuario =:usu AND clave =:cla AND torneo=:torneo";
+		$SQLI="SELECT * FROM registro_torneo WHERE usuario =:usu AND clave =:cla  AND torneo=:torneo";
         $resultadoss=$base->prepare($SQLI);
 		$resultadoss->execute(array(":usu"=>$usuario,":cla"=>$clave,":torneo"=>$torneo));
-		$band=0;
 		$ecn=true;
+		
 	while($registros=$resultadoss->fetch(PDO::FETCH_ASSOC)){
-	   $ecn=false;
-   
+		echo "torneo" . $registros["torneo"];
+	   if(strcmp($registros["torneo"],"")==0){
+	  
+	      $ecn=false;
+	   }
 	}
-		if($ecn){
+		if($ecn && $torneo!=""){
 			
 	     $SQL="INSERT INTO registro_torneo(cant_jugadores,categoria,clave,correo,dir_resp,fecha_creacion,nom_equipo,torneo,usuario,web)
 		 VALUES (:participantes,:categoria,:clave,:gmail,:dir,:fecha_cre,:nombre_eq,:torneo,:usuario,:web) ";

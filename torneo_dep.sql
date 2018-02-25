@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-02-2018 a las 07:57:11
+-- Tiempo de generación: 25-02-2018 a las 02:55:53
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `datos_usuarios` (
-  `Nombre_Equipo` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `Nombre_Equipo` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fecha_creacion` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
   `dir_responsable` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `correo` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -41,8 +41,8 @@ CREATE TABLE `datos_usuarios` (
 --
 
 INSERT INTO `datos_usuarios` (`Nombre_Equipo`, `fecha_creacion`, `dir_responsable`, `correo`, `sitio_web`, `usuario`, `clave`) VALUES
-(NULL, NULL, NULL, NULL, NULL, '#ojoblanco', '1234'),
-('barcelona', '2018-02-14', 'espa?a', 'barcelona@gmail.com', 'barcelona.com', 'barcelona', '1547');
+('Administrador', '2018-02-04', 'Venezuela', 'ojoblanco@gmail.com', 'ojoblanco.com', '#ojoblanco', '1234'),
+('barcelona', '2018-02-05', 'espa?a', 'barcelona@gmail.com', 'barcelona.com', 'barcelona', '1547');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,9 @@ CREATE TABLE `registro_torneo` (
 --
 
 INSERT INTO `registro_torneo` (`torneo`, `categoria`, `cant_jugadores`, `usuario`, `clave`, `nom_equipo`, `fecha_creacion`, `web`, `dir_resp`, `correo`) VALUES
-('basquet', 'aficiaonado', '11', 'barcelona', '1547', 'barcelona', '2018-02-14', 'barcelona.com', 'espa?a', 'barcelona@gmail.com');
+('futbol', 'principiante', '5', 'barcelona', '1547', 'barcelona', '2018-02-14', 'barcelona.com', 'espa?a', 'barcelona@gmail.com'),
+('voleibol', 'principiante', '5', 'barcelona', '1547', 'barcelona', '2018-02-14', 'barcelona.com', 'espa?a', 'barcelona@gmail.com'),
+('FUTBOL', 'principiante', '3', 'barcelona', '1547', 'barcelona', '2018-02-05', 'barcelona.com', 'espa?a', 'barcelona@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -86,8 +88,8 @@ CREATE TABLE `torneos_fecha` (
 --
 
 INSERT INTO `torneos_fecha` (`torneo`, `fecha`) VALUES
-('futbol', 'enero'),
-('basquet', 'febrero');
+('FUTBOL', '2018-02-06'),
+('tenis', '2018-02-15');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

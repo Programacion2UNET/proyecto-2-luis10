@@ -97,7 +97,10 @@
 				  else {
 				   $ecn=true;	  
 				 }  
-				$torneo[]=$fila["torneo"];
+			
+				     $torneo[]=$fila["torneo"];
+			
+				
 			    $cont++;
 			  }
 			  
@@ -110,6 +113,13 @@
 				  }
 				  echo "<script>eliminar();</script>";
 			  }
+			  else if(!$ecn){
+				   echo"<script>imprimir('$usuario','$clave')</script>";
+				  for($v=0;$v<count($torneo);$v++){
+				   echo "<script>insertar('$torneo[$v]')</script>";
+				  }
+				  echo "<script>eliminar();</script>";
+		     }
 			 
 			  
      ?>

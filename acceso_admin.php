@@ -48,9 +48,8 @@
       	   <ul class="menu">
       	   	   <li><a class="accseso" href="listado_equipos.php">listado con todos los equipos inscritos en el torneo</a></li>
       	   	   <li><a class="accseso" href="#">Detalles de una inscripcion</a></li>
-               <li><a class="accseso" href="#">Editar un registro</a></li>
-      	   	   <li><a class="accseso" href="#">borrar un registro</a></li>
-               <li><a class="accseso" href="#">Registrar torneos definir la fecha de realización</a></li>
+      	   	   <li><a class="accseso" href="BORRAR_REGISTROS.php">borrar un registro</a></li>
+               <li><a class="accseso" href="DEFINIR_FECHA_TORNEO.php">Registrar torneos definir la fecha de realización</a></li>
       	   </ul>
 
       </div>
