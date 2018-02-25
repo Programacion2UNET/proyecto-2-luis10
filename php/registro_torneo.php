@@ -30,7 +30,7 @@
 		   top:60%;
 		 }
 		</style>
-        <script src="jquery-3.2.1.min.js"></script>
+        <script src="css/jquery-3.2.1.min.js"></script>
          <script type="text/javascript">
 		
 
