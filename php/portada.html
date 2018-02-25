@@ -5,23 +5,17 @@
 	<meta charset="utf-8">
 	<style type="text/css">
 	html{
-		background-color: green;
+		background-color: white;
 	}
-	h1 {
-		color: white;
-		text-align: center;
-	}
+	
 	h2{
 		color: white;
 		text-align: center;
 	}
-	table{
-		position: absolute;
-		left: 40%;
-		top: 25%;
-	}
-	.area{
-		
+	label{
+	
+	  font-family:"Comic Sans MS", cursive;
+
 	}
 	.acceso{
 	   
@@ -29,45 +23,90 @@
 	    height: 50px;
 	}
 	#principal {
+		position: absolute;
+		left:10%;
+		top:20%;
 		margin-left: 25%;
 		padding: 5px 5px 5px 25px;
-		background-color: #88BEFB;
+		background-color:#FFF;
 		border-radius: 50px;
 		box-shadow: 10px 10px 25px 0px #999999;
-		width: 50%;
+		width: 30%;
 		height: 200px;
 	}
 	 .accseso{
 
      	 text-decoration: none;
-     	 font-size: 30px;
-         color: white;
+     	 font-size: 20px;
+         color: black;
+		 font-family:"Comic Sans MS", cursive;
      }
       a:hover{
-     	color: black;
+     	color:#666;
      }
      #registro{
      	position: absolute;
-		left: 45%;
-		top: 40%;
+		left: 25%;
+		top: 70%;
      }
+	 .imagen{
+		 position: absolute;
+		 left: 0%;
+		top: 0%;
+		width:100%;
+	  }
+	  #tabla{
+		  position: absolute;
+		  left: 13%;
+		  top: 20%;
+	   }
+	   .enviar{
+		   background-color:#000;
+		   color:#FFF;
+		     position: absolute;
+			 left:28%;
+			 top:108%;
+		}
+		#bienvenido{
+		     position: absolute;
+			 left:37%;
+			 top:-5%;
+			 font:"Comic Sans MS", cursive;
+			 font-size:1.5em;
+			 
+		}
+		#titulo{
+		    position: absolute;
+			left:25%;
+			font-style:oblique;
+			font-variant:small-caps;
+			font-family:"Comic Sans MS", cursive;
+			font-size:2em;
+			color:#000;
+			
+			
+		}
 	</style>
 	<script type="text/javascript">
 		
-
+//<img src="imagenes/Deporte.jpg" class="imagen"/>
 	</script>
+     
 </head>
 
 <body>
-	<h1>Sistema de inscripcion de Torneos Deportivos</h1>
-	 <h2>Iniciar sesion</h2>
+    <img src="imagenes/Deporte.jpg" class="imagen"/>
+	<h1 id="titulo">Sistema de inscripcion de Torneos Deportivos</h1>
+	
 	
 	<div id="principal">
 	
 	<form action="verificacion.php" method="post">
 
-		<table>
+		<table id="tabla">
 			
+                 <p id="bienvenido">Bienvenido</p>
+             
 			<tr>
 				<td><label for="usuario" class="acceso">Nombre de usuario:</label></td>
 				<td><input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" class="area"></td>
@@ -77,18 +116,18 @@
                 <td><input type="text" id="clave" name="clave" placeholder="Ingresa tu clave"></td>
 			</tr>
             <tr>
-          	   <td><input type="submit" name="enviar" value="Iniciar Sesion"></td>
+          	   <td><input type="submit" name="enviar" value="Iniciar Sesion" class="enviar"></td>
 	 
             </tr>
 		</table>
            <div id="registro">
-           <a class="accseso" href="resgistar_equipo.html">Registrase</a>
+           <a class="accseso" href="resgistar_equipo.html">¿Nuevo?..registrate</a>
            </div>
 	
 	</form>
 
 	</div>
-
+ 
 	
 </body>
 
