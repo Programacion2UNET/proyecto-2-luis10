@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+	  html{
+		  background-color:#6FF;
+	   
+	  }
+      #imagen{
+		  position:absolute;
+		  left:20%;
+		  width:50%;
+		  
+	  }
+      #boton{
+		  position:absolute;
+		  
+		  left:55%;
+		  top:35%;
+	     background-color:#000;
+		 font-size:2em;
+		 font-style:oblique;
+		 color:#FFF;
+		 width:15%;
+		 height:50px;
+	     
+	  }
+    </style>
+    
+</head>
+
+<body>
+<img src="imagenes/continuar.jpg"  id="imagen" />
 <?php
 	
 	/*$usuario=$_POST["usuario"];
@@ -41,7 +75,7 @@
 			    <td><input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input></td>
 			  </tr>	
 			  <tr>
-			    <input type='submit' value='continuar'/>
+			    <input type='submit' value='continuar' id='boton'/>
 			  </tr>
 			  </table>
 		</form>";
@@ -64,3 +98,5 @@
 	
 
 ?>
+</body>
+</html>

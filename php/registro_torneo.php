@@ -6,28 +6,42 @@
    <style type="text/css">
 		 
 		 html{
-   	 	   background-color: green;
+   	 	   background-color: white;
    	     }
    	     #formulario{
    	     	 position: absolute;
    	     	 left: 40%;
-   	     	 top: 10%;
+   	     	 top: 15%;
    	     }
          label{
-         	color: white;
+         	color: black;
          	font-size: 24px; 
          }
 		 select{
 	     }
          h1{
       	  text-align: center;
-      	  color: white;
+      	  color: black;
       	  font-family: cursive;
          }
          .boton{
 		   position:absolute;
 		   left:40%;
 		   top:60%;
+		 }
+		 #imagen{
+			 position:absolute;
+			 left:0%;
+			 top:0%;
+			 width:100%;
+			 height:100%;
+		 
+		 }
+		 #titulo{
+		     position:absolute;
+			 left:38%;
+			 top:0%;
+			 
 		 }
 		</style>
         <script src="css/jquery-3.2.1.min.js"></script>
@@ -62,8 +76,9 @@
 </head>
 
 <body>
-
-     <h1>Registro de Torneo</h1>
+ 
+      <img src="imagenes/torneo.jpg" id="imagen"/>
+      <h1 id="titulo">Registro de Torneo</h1>
 
      <?php
 	 		
