@@ -43,27 +43,23 @@
 		
 	   $resultado->closeCursor();
 	   $base=null;
-      ?>
-
-      <div id="bajar">
-      		<div id="titulo">
+	   echo" <div id='bajar'>
+      		<div id='titulo'>
       				<h1>Inicio exitoso</h1>
       		</div>
-      </div>
-      <form action='registro_torneo.php' method='post'>    
-	          
-			 	  
-		<input type='text' id='usuario' name='usuario' value='$usuario'   style='visibility:hidden'></input> 
-		<input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input>
-			   	
-			  
-		<div id="efecto">
-			  <input type='submit' value='Continuar' id="boton"/>
-		</div>	
-
-	</form>
-
-      <?php
+      </div>";
+      echo"<form action='registro_torneo.php' method='post'>    
+	         <table>   
+			 <tr>   
+			   <td><input type='text' id='usuario' name='usuario' value='$usuario'   style='visibility:hidden'></input><td/>  
+			    <td><input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input></td>
+			  </tr>	
+			  <tr>
+			    <input type='submit' value='continuar' id='boton'/>
+			  </tr>
+			  </table>
+		</form>";
+	 // header('Location:registro_torneo.php');
 	}
 	else if($ecn){
 		$resultado->closeCursor();
@@ -73,7 +69,7 @@
 	else {
 	  $resultado->closeCursor();
 	  $base=null;
-	    header('Location:index.html');
+	    header('Location:portada.html');
 	}
    }
    catch(Exception $e){

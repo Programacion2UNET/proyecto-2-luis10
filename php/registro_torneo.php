@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-
 <title>Resgistro torneo</title>
    
         <script src="css/jquery-3.2.1.min.js"></script>
@@ -27,9 +26,33 @@
 			      $("#lista").remove(); */  
                
 		  }
-		 function insertar(torneo){
-			  $("#lista").after("<option>"+torneo+"</option>");
-			 
+				 function insertar(torneo,fecha,creacion){
+			
+			   
+			   var FECHA=fecha.split("-");
+			   var FechA=creacion.split("-");
+			    var dia,diac;
+				var mes,mesc;
+				var ano,anoc;
+				for(var i=0;i<FECHA.length;i++){
+				    if(i==0){
+						dia=FECHA[i];
+					    diac=FechA[i];
+					}
+					else if(i==1){
+					   mes=FECHA[i];
+					   mesc=FechA[i];
+					}
+					else if(i==2){
+					   ano=FECHA[i];
+					   anoc=FechA[i];
+					}
+				}
+				var F=new Date(""+dia+"/"+mes+"/"+ano);
+				var FF=new Date(""+diac+"/"+mesc+"/"+anoc);
+				if(FF.getTime()<=F.getTime()){
+					$("#lista").after("<option>"+torneo+"</option>");
+				}
 		}
 		function eliminar(){
 		 $("#lista").remove();	
@@ -44,15 +67,35 @@
       	<h1>Registro de Torneo</h1>
 	  </div>		
      <div id="principal">
+   
      <?php
-	 		
-           
-			$usuario=$_POST["usuario"];
+	        $usuario=$_POST["usuario"];
 			$clave=$_POST["clave"];
 			$db_host="localhost";
 			$db_nombre="torneo_dep";
 			$db_usuario="root";
 			$db_contra="";
+		    $creacion;
+			try{
+				$base=new PDO('mysql:host=localhost; dbname=torneo_dep','root','');
+				$base->exec("SET CHARACTER SET utf8");
+				$sql="SELECT * FROM datos_usuarios where usuario =:usu AND clave =:cla";
+				
+				$resultado=$base->prepare($sql);
+				$resultado->execute(array(":usu"=>$usuario,":cla"=>$clave));
+			
+				while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
+					$creacion=$registro['fecha_creacion'];
+					
+				 }
+			
+				$resultado->closeCursor();
+		   }
+		   catch(Exception $e){
+				die ('Error' . $e->GetMessage());
+			 } 
+   
+			
 			
 			$coneccion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 			if(mysqli_connect_errno()){
@@ -66,7 +109,7 @@
 			 $ecn=false;
 			 $cont=0;
 			 $torneo[]="";
-			
+			 $Fecha []="";
 			  while($fila=mysqli_fetch_array($resultado,MYSQL_ASSOC)){
 				  
 			    if(strcmp($fila["torneo"],"")==0 && strcmp($fila["fecha"],"")==0){
@@ -78,7 +121,7 @@
 				 }  
 			
 				     $torneo[]=$fila["torneo"];
-			
+			         $Fecha []=$fila["fecha"];
 				
 			    $cont++;
 			  }
@@ -88,7 +131,7 @@
 			  if($ecn){
 				  echo"<script>imprimir('$usuario','$clave')</script>";
 				  for($v=1;$v<count($torneo);$v++){
-				   echo "<script>insertar('$torneo[$v]')</script>";
+				   echo "<script>insertar('$torneo[$v]','$Fecha[$v]','$creacion')</script>";
 				  }
 				  echo "<script>eliminar();</script>";
 			  }

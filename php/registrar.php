@@ -5,10 +5,10 @@
 <title>Documento sin título</title>
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
 
 <?php
-		$torneo=$_POST["torneo"];
+	    $torneo=$_POST["torneo"];
 		$categoria=$_POST["categoria"];
 		$participantes=$_POST["cant"];
 		$usuario=$_POST["usuario"];
@@ -41,17 +41,15 @@
 	   
 	}
 	
-	  	$sqli="SELECT * FROM registro_torneo where usuario =:usu AND clave =:cla";
+	$sqli="SELECT * FROM registro_torneo where usuario =:usu AND  categoria=:categoria AND torneo=:torneo";
         $resultados=$base->prepare($sqli);
-		$resultados->execute(array(":usu"=>$usuario,":cla"=>$clave));
+		$resultados->execute(array(":usu"=>$usuario,":categoria"=>$categoria,":torneo"=>$torneo));
 		$band=0;
-		$ecn=false;
+		$ecn=true;
 	while($registros=$resultados->fetch(PDO::FETCH_ASSOC)){
-	   $ecn=true;
-	   if(strcmp($usuario,"")==0){
-	    	$band=1;
-	   }
-   
+	   $ecn=false;
+	   $band=1;
+      // echo $registros["categoria"].$registros['torneo'];
 	}
 	if($band==1){
        echo"<p >NO SE PUEDE REGISTRAR </p>";
@@ -60,7 +58,7 @@
 	}
 	else{
 		//echo "si se puede registrar";
-		$SQLI="SELECT * FROM registro_torneo WHERE usuario =:usu AND clave =:cla  AND torneo=:torneo";
+	/*	$SQLI="SELECT * FROM registro_torneo WHERE usuario =:usu AND clave =:cla  AND torneo=:torneo";
         $resultadoss=$base->prepare($SQLI);
 		$resultadoss->execute(array(":usu"=>$usuario,":cla"=>$clave,":torneo"=>$torneo));
 		$ecn=true;
@@ -71,7 +69,7 @@
 	  
 	      $ecn=false;
 	   }
-	}
+	}*/
 		if($ecn && $torneo!=""){
 			
 	     $SQL="INSERT INTO registro_torneo(cant_jugadores,categoria,clave,correo,dir_resp,fecha_creacion,nom_equipo,torneo,usuario,web)
@@ -83,7 +81,7 @@
 		}
 		else {
 			//  echo"<p >Ya te encuentras registrado en el torneo de $torneo</p>";
-			  $resultadoss->closeCursor();
+			//  $resultadoss->closeCursor();
 		 }
 	  }
       $SQ="SELECT * FROM registro_torneo where usuario =:usu AND clave =:cla ";
@@ -91,8 +89,8 @@
 		$resultad->execute(array(":usu"=>$usuario,":cla"=>$clave));
 		echo "<h1>Listado de torneos inscritos</h1>";
 	while($registros=$resultad->fetch(PDO::FETCH_ASSOC)){
-	     echo $registros["torneo"] ." </br>";
-   
+	     echo "El Equipo : ".$registros["nom_equipo"]." esta registrado en el torneo : ".$registros["torneo"] ."  Categoria :".$registros["categoria"]."  </br>";
+     
 	}
    }
    catch(Exception $e){
