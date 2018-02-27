@@ -1,26 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Registro</title>
-<style type="text/css">
-		 
-		 html{
-   	 	   background-color: green;
-   	     }
-   	    p{  
-		    position:absolute
-		     left: 30%;
-   	     	 top: 10%;
-			text-align:center;
-			font-size:24px;
-			color:#FFF;
-		}
-
-		</style>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>Registro</title>
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
+
+
 <?php
       $nombre_eq=$_POST["nombre_eq"];
 	  $fecha_cre=$_POST["fecha_cre"];
@@ -47,15 +35,16 @@
 	    	$band=1;
 	   }
 	}
-	if($band==1){
-       echo"<p >NO SE PUEDE REGISTRAR </p>";
-		$resultado->closeCursor();
-
-	}
-	else if($ecn && $band==0){
+	if($band==1 || ($ecn && $band==0)){
+	?>
 		
-	    echo"<p >NO SE PUEDE REGISTRAR USUARIO EXISTENTE EN LA BDD</p>";
-		$resultado->closeCursor();
+			<h1>No se pudo registrar</h1>
+		
+		<div id="flujo">
+			<input type="button" onclick="location.href='index.html';" value="Iniciar sesion" id="boton"/>	
+		</div>
+
+	<?php
 	}
 	else{
 		
@@ -63,7 +52,20 @@
 		 VALUES (:nombre_eq,:fecha_cre,:dir,:gmail,:web,:usuario,:clave) ";
 		 $RESULTADO=$base->prepare($SQL);
 		 $RESULTADO->execute(array(":nombre_eq"=>$nombre_eq,":fecha_cre"=>$fecha_cre,":dir"=>$dir,":gmail"=>$gmail,":web"=>$web,":usuario"=>$usuario,":clave"=>$clave));
-		echo"<p>Registro exitoso </p>"; 
+		?>
+
+
+		<div class="bajar">
+			<div id="titulo">
+				<h1>Registrado exitosamente.</h1>
+			</div>
+		</div>
+
+		<div id="efecto">
+			<input type="button" onclick="location.href='index.html';" value="Iniciar sesion" id="boton"/>	
+		</div>
+		
+		<?php 
 		$resultado->closeCursor();
 	}
 
@@ -74,5 +76,10 @@
 
 
 ?>
+	<style type="text/css">
+		.bajar {
+			margin-top: 15%;
+		}          		
+    </style>
 </body>
 </html>

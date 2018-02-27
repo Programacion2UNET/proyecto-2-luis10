@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-    <style>
-	  html{
-		  background-color:#6FF;
-	   
-	  }
-      #imagen{
-		  position:absolute;
-		  left:20%;
-		  width:50%;
-		  
-	  }
-      #boton{
-		  position:absolute;
-		  
-		  left:55%;
-		  top:35%;
-	     background-color:#000;
-		 font-size:2em;
-		 font-style:oblique;
-		 color:#FFF;
-		 width:15%;
-		 height:50px;
-	     
-	  }
-    </style>
-    
+	<title>Verificacion</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
-<body>
-<img src="imagenes/continuar.jpg"  id="imagen" />
+<body background="imagenes/fondo.jpg">
 <?php
 	
 	/*$usuario=$_POST["usuario"];
@@ -68,18 +43,27 @@
 		
 	   $resultado->closeCursor();
 	   $base=null;
-      echo"<form action='registro_torneo.php' method='post'>    
-	         <table>   
-			 <tr>   
-			   <td><input type='text' id='usuario' name='usuario' value='$usuario'   style='visibility:hidden'></input><td/>  
-			    <td><input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input></td>
-			  </tr>	
-			  <tr>
-			    <input type='submit' value='continuar' id='boton'/>
-			  </tr>
-			  </table>
-		</form>";
-	 // header('Location:registro_torneo.php');
+      ?>
+
+      <div id="bajar">
+      		<div id="titulo">
+      				<h1>Inicio exitoso</h1>
+      		</div>
+      </div>
+      <form action='registro_torneo.php' method='post'>    
+	          
+			 	  
+		<input type='text' id='usuario' name='usuario' value='$usuario'   style='visibility:hidden'></input> 
+		<input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input>
+			   	
+			  
+		<div id="efecto">
+			  <input type='submit' value='Continuar' id="boton"/>
+		</div>	
+
+	</form>
+
+      <?php
 	}
 	else if($ecn){
 		$resultado->closeCursor();
@@ -89,7 +73,7 @@
 	else {
 	  $resultado->closeCursor();
 	  $base=null;
-	    header('Location:portada.html');
+	    header('Location:index.html');
 	}
    }
    catch(Exception $e){
@@ -98,5 +82,16 @@
 	
 
 ?>
+<style type="text/css">
+	
+	#bajar {
+		margin-top: 15%;
+	}
+
+	input {
+		padding: 0;
+		margin: 0;
+	}
+</style>
 </body>
 </html>

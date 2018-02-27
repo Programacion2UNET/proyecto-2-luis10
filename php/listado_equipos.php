@@ -18,8 +18,10 @@
 	$resultado->execute(array());
 	
 	while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
+	   echo "<p class='dato'>".$registro["nom_equipo"]."</p>";
 	   echo"<form action='#' method='post'> 
-	          <table>
+	          <table style='display'>
+
 	               <tr> 
 	                  <td> <label> Equipo :</label></td>
 	                  <td><input type='text' name='nom_equipo' value='".$registro["nom_equipo"]."'></input></td>

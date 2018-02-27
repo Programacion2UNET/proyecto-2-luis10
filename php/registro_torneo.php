@@ -1,49 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
 <title>Resgistro torneo</title>
-   <style type="text/css">
-		 
-		 html{
-   	 	   background-color: white;
-   	     }
-   	     #formulario{
-   	     	 position: absolute;
-   	     	 left: 40%;
-   	     	 top: 15%;
-   	     }
-         label{
-         	color: black;
-         	font-size: 24px; 
-         }
-		 select{
-	     }
-         h1{
-      	  text-align: center;
-      	  color: black;
-      	  font-family: cursive;
-         }
-         .boton{
-		   position:absolute;
-		   left:40%;
-		   top:60%;
-		 }
-		 #imagen{
-			 position:absolute;
-			 left:0%;
-			 top:0%;
-			 width:100%;
-			 height:100%;
-		 
-		 }
-		 #titulo{
-		     position:absolute;
-			 left:38%;
-			 top:0%;
-			 
-		 }
-		</style>
+   
         <script src="css/jquery-3.2.1.min.js"></script>
          <script type="text/javascript">
 		
@@ -75,11 +38,12 @@
   
 </head>
 
-<body>
- 
-      <img src="imagenes/torneo.jpg" id="imagen"/>
-      <h1 id="titulo">Registro de Torneo</h1>
-
+<body background="imagenes/fondo.jpg">
+ 	
+ 	  <div id="titulo">
+      	<h1>Registro de Torneo</h1>
+	  </div>		
+     <div id="principal">
      <?php
 	 		
            
@@ -138,7 +102,7 @@
 			 
 			  
      ?>
-     
+     </div>
 
 </body>
 </html>
