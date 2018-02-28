@@ -55,7 +55,7 @@
 			    <td><input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input></td>
 			  </tr>	
 			  <tr>
-			    <input type='submit' value='continuar' id='boton'/>
+			    <input type='submit' style='background-color:gray'   value='continuar' id='boton'/>
 			  </tr>
 			  </table>
 		</form>";
@@ -80,8 +80,12 @@
 ?>
 <style type="text/css">
 	
+	
 	#bajar {
 		margin-top: 15%;
+		
+	
+	
 	}
 
 	input {

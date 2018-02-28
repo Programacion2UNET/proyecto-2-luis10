@@ -77,7 +77,7 @@
 		 VALUES (:participantes,:categoria,:clave,:gmail,:dir,:fecha_cre,:nombre_eq,:torneo,:usuario,:web) ";
 		 $RESULTADO=$base->prepare($SQL);
 		 $RESULTADO->execute(array(":participantes"=>$participantes,":categoria"=>$categoria,":clave"=>$clave,":gmail"=>$gmail,":dir"=>$dir,":fecha_cre"=>          $fecha_cre,":nombre_eq"=>$nombre_eq,":torneo"=>$torneo,":usuario"=>$usuario,":web"=>$web ));
-		 echo"<p>Registro exitoso </p>"; 
+		 echo"<p id='titulo'>Registro exitoso </p>"; 
 		 $resultado->closeCursor();
 		}
 		else {

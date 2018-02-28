@@ -1,0 +1,2 @@
+para ser administrador hay que crear el usuario con "#" y el nombre q deseas
+ejemplo : #ejemplo
