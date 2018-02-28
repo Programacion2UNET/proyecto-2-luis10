@@ -4,21 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <title>Listado Equipos</title>
-<style>
-    label{
-		color:#FFF;
-		font-size:24px;
-	
-	}
 
-
-</style>
    <script src="css/jquery-3.2.1.min.js"></script>
 <script>
 
 	  function imprimir() {
          
-            document.write(" <form action='VER_LISTADO.php'  method='post' id='FORMULARIO'><table><tr><td><label  for='torneo'>Torneo</label></td> <td><select  name='torneo' id='Torneo'></select> </td>      </tr>        <tr>       <td><input class='boton' id='efecto' type='submit' value='Buscar'  /></td>     </tr>     </table>     </form>");   
+            document.write(" <div id='principal'> <form action='VER_LISTADO.php'  method='post' id='FORMULARIO'><table><tr><td><label  for='torneo'>Torneo</label></td> <td><select  name='torneo' id='Torneo'></select> </td>      </tr>    </table>  <div id='efecto'>  <input  type='submit' value='Buscar' id='boton' /> <input  type='button' onclick=location.href='acceso_admin.php'; value='Volver' id='boton' /> </div>        </form> </div>");   
 		      
 		  }
 	 function insertar(torneo){

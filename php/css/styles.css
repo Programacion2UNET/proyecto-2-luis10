@@ -64,9 +64,7 @@ button:hover {
 	width: 50%;
 	height: 60%;
 	margin-bottom: 6%;
-	
-	
-	
+
 }
 
 #principal {
@@ -78,11 +76,4 @@ button:hover {
 	width: 50%;
 	height: 60%;
 }
-#FORMULARIO{
-	text-align:center;
-	background-color:#333;
-	width:20%;
-	position:absolute;
-	left:40%;
-	
-}
+

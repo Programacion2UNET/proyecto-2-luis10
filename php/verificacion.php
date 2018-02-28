@@ -54,10 +54,11 @@
 			   <td><input type='text' id='usuario' name='usuario' value='$usuario'   style='visibility:hidden'></input><td/>  
 			    <td><input type='text' id='clave' name='clave' value='$clave'   style='visibility:hidden'></input></td>
 			  </tr>	
-			  <tr>
-			    <input type='submit' style='background-color:gray'   value='continuar' id='boton'/>
-			  </tr>
 			  </table>
+			    <div id='efecto'>
+			    <input type='submit' value='Continuar' id='boton'/>
+			  	</div>
+			  
 		</form>";
 	 // header('Location:registro_torneo.php');
 	}
