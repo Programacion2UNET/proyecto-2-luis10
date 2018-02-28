@@ -3,23 +3,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Informacion</title>
-<style>
-	
-	form{
-		background-color:#333;
-		width:40%;
-	    margin: 0 auto;
-	}
-	label{
-	   color:#FFF;
-	   font-family:"Comic Sans MS", cursive;
-	   font-size:18px;
-	}
-	#BOTONES{
-		width:auto;
-	}
-</style>
+<title>Listado</title>
+
 </head>
 
 <body  background="imagenes/fondo.jpg">
@@ -36,7 +21,9 @@
 	echo "<h1 id='titulo'>Equipos registrados en el torneo $torneo</h1>";
 	while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
 	  	
-		   echo"<form action='#' method='post' > 
+		   echo"
+		   <div id='principal'>
+		   	<form action='#' method='post' > 
 	          <table>
 	               <tr> 
 	                  <td> <label> Equipo :</label></td>
@@ -65,8 +52,9 @@
 					   <td><input type='submit'  id='BOTONES' value='eliminar' onclick=this.form.action='ELIMINAR_EQ.php' ></td>
 					</tr> 
 	            </table>
-	   </form>";
-	   echo "<br>"; 
+	   </form>
+	   </div>";
+	    
 	  
 	}
 	
