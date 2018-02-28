@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Eliminar torneo</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
+
 <?php
-
-
 	  $fecha_creacion=$_POST["fecha"];
 	  $Torneo=$_POST["torneo"];
     
@@ -24,7 +24,7 @@
 	   echo " Apellido " . $registro["APELLIDO"];
 	   echo "<br>";
 	}*/
-	echo"Registro eliminado";
+	echo"<h1 id='titulo'>Registro Eliminado</h1>";
 	$resultado->closeCursor();
    }
    catch(Exception $e){
@@ -35,5 +35,11 @@
 
 
 ?>
+<div id="principal">
+	
+	<div id="efecto">
+             <input type="button" name="b" id="boton" value="Volver" onclick="location.href='acceso_admin.php';"> 
+           </div>
+</div>
 </body>
 </html>

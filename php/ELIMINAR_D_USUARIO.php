@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Eliminando usuarios</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
 <?php
 	 $equipo=$_POST["nom_equipo"];
 	 $fecha_creacion=$_POST["fecha_creacion"];
@@ -27,7 +28,12 @@
 	   echo " Apellido " . $registro["APELLIDO"];
 	   echo "<br>";
 	}*/
-	echo"Registro eliminado";
+	echo"<h1 id='titulo'>Registro Eliminado</h1>";
+	echo "<div id='principal'>
+		<div id='efecto'>
+			<input type='button' id='boton' value='Volver' onclick=location.href='BORRAR_REGISTROS.php';>
+		</div>
+	</div>";
 	$resultado->closeCursor();
    }
    catch(Exception $e){

@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Actualizar usuario</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
 <?php
 	
 	   $equipo=$_POST["nom_equipo"];
@@ -35,8 +36,9 @@
 		  echo "error en los emvios de datos ";
 	  }
 	  else{
-		echo "Registro guardado <br><br>"; 
-		echo "<table>
+		echo "<h1 id='titulo'>Registro guardado</h1>"; 
+		echo "<div id='principal'>
+				<table>
 		             <tr><td>$equipo</td></tr>
 					 <tr><td>$fecha_creacion</td></tr>
 					 <tr><td>$sitio_web</td></tr>
@@ -44,7 +46,11 @@
 					 <tr><td>$correo</td></tr>
 					 <tr><td>$usuario</td></tr>
 					 <tr><td>$clave</td></tr>			
-		</table>";
+		</table>
+		<div id='efecto'>
+			<input type='button' id='boton' value='Volver' onclick=location.href='BORRAR_REGISTROS.php';>
+		</div>
+		</div>";
 	  }
 	
 	

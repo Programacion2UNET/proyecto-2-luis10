@@ -3,27 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Registro</title>
-<style>
-	
-	html{
-		background-image:url(imagenes/guardar.png);
-		
-		
-	}
-	p{
-		text-align:center;
-		font-family:"Comic Sans MS", cursive;
-		font-size:36px;
-		color:#006;
-	  
-	}
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-
-	
-</style>
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
+	
 <?php
     $torneo=$_POST["torneo"];
 	$fecha=$_POST["fecha"];
@@ -45,13 +30,13 @@
 	
 	    }
 		if($band==1){
-       echo"<p >NO SE PUEDE REGISTRAR El TORNEO</p>";
+       echo"<h1 id='titulo'>NO SE PUEDE REGISTRAR El TORNEO</h1>";
 		$resultado->closeCursor();
 
 	}
 	else if($ecn && $band==0){
 		
-	    echo"<p >NO SE PUEDE REGISTRAR TORNEO EXISTENTE EN LA BDD</p>";
+	    echo"<h1 id='titulo'>NO SE PUEDE REGISTRAR TORNEO EXISTENTE EN LA BDD</h1>";
 		$resultado->closeCursor();
 	}
 	else{
@@ -59,7 +44,7 @@
 	    $SQL="INSERT INTO torneos_fecha(torneo,fecha) VALUES (:torneo,:fecha)";
 		 $RESULTADO=$base->prepare($SQL);
 		 $RESULTADO->execute(array(":torneo"=>$torneo,":fecha"=>$fecha));
-		echo"<p>Registro exitoso </p>"; 
+		echo"<h1 id='titulo'>Registro exitoso </h1>"; 
 		$resultado->closeCursor();
 	}
 	
@@ -71,5 +56,11 @@
 	
 
 ?>
+<div id="principal">
+	<div id="efecto">
+             
+        <input type="button" name="b" id="boton" value="Volver" onclick="location.href='DEFINIR_FECHA_TORNEO.php';"> 
+        </div>
+</div>
 </body>
 </html>

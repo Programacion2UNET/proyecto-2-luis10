@@ -2,40 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DEFINIR_FECHA_TORNEO</title>
-<style>
-	
-	html{
-		background-image:url(imagenes/guardar.png);
-		
-		
-	}
-	h1{
-		text-align:center;
-		font-family:"Comic Sans MS", cursive;
-		font-size:36px;
-		color:#030;
-	  
-	}
-	#formulario{
-		margin:0 auto;
-		width:30%;
-		background-color:#930;
-		color:#FFF;
-	
-	}
-	label{
-		font-size:24px;
-		font-family:"Comic Sans MS", cursive;
-	
-	}
+<title>Fecha de torneos</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-	
-</style>
 </head>
 
-<body>
-   <h1>Guardar un torneo</h1>
+<body background="imagenes/fondo.jpg">
+   <h1 id="titulo">Guardar un torneo</h1>
+   <div id="principal">
    <form id="formulario" action="REGISTRAR_FECHA_TORNEO.php" method="post">
       
         <table>
@@ -47,11 +21,13 @@
                <td><label for="fecha">Fecha </label></td>
                <td><input required=true  name="fecha" id="fecha" placeholder="Ingresa Fecha" type="date" /></td>
            </tr>
-           <tr>
-             <td><input type="submit"  value="guardar	"/></td>
-           </tr>
-        </table>
-   </form>
+        </table>           
+           <div id="efecto">
+             <input type="submit" id="boton" value="Guardar"/></td>
+           	 <input type="button" name="b" id="boton" value="Volver" onclick="location.href='acceso_admin.php';"> 
+           </div>
 
+   </form>
+   </div>
 </body>
 </html>

@@ -3,32 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Eliminar</title>
-<style>
-        html{
-			background-image:url(imagenes/Deporte.jpg);
-			background-size:100%;
-		   
-		}
-       
-		h1{
-			margin:0 auto;
-			text-align:center;
-			background-color:#030;
-			color:#FFF;
-			font-style:italic;
-			font-size:36px;
-			font-family:"Comic Sans MS", cursive;
-			width:40%;
-			border-radius:45%;
-		  
-		}
-
-
-</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
+
 <?php
       $equipo=$_POST["nom_equipo"];
 	  $fecha_creacion=$_POST["fecha_creacion"];
@@ -48,7 +28,11 @@
 	   echo " Apellido " . $registro["APELLIDO"];
 	   echo "<br>";
 	}*/
-	echo"<h1>Registro eliminado</h1>";
+	echo"<h1 id='titulo'>Registro eliminado</h1> <div id='principal'>
+		<div id='efecto'>
+			<input type='button' id='boton' value='Volver' onclick=location.href='BORRAR_REGISTROS.php';>
+		</div>
+	";
 	$resultado->closeCursor();
    }
    catch(Exception $e){
@@ -56,6 +40,6 @@
 	 }
 
 ?>
-
+</div>
 </body>
 </html>

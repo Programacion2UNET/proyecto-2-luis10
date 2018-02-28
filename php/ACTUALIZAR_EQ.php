@@ -2,43 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
-<style>
-        html{
-			background-image:url(imagenes/Deporte.jpg);
-			background-size:100%;
-		   
-		}
-         #tabla{
-		margin:0 auto;
-		background-color:#060;
-		color:#FFF;
-		font-family:"Comic Sans MS", cursive;
-		font-size:36px;
-		text-align:center;
-		width:50%;
-		border-radius:55%;
-		
-		}
-		h1{
-			margin:0 auto;
-			text-align:center;
-			background-color:#030;
-			color:#FFF;
-			font-style:italic;
-			font-size:36px;
-			font-family:"Comic Sans MS", cursive;
-			width:30%;
-			border-radius:45%;
-		  
-		}
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
+<title>Actualizado</title>
 
-</style>
 </head>
 
 
-<body  >
+<body background="imagenes/fondo.jpg">
 <?php
         $equipo=$_POST["nom_equipo"];
 		$fecha_creacion=$_POST["fecha_creacion"];
@@ -65,13 +36,17 @@
 		  echo "error en los emvios de datos ";
 	  }
 	  else{
-		echo "<h1>Registro guardado</h1> <br><br>"; 
-		echo "<table id='tabla'><tr><td>$equipo</td></tr>
+		echo "<h1 id='titulo'>Registro guardado</h1>"; 
+		echo "<div id='principal'><table id='tabla'><tr><td>$equipo</td></tr>
 		             <tr><td>$categoria</td></tr>
 					 <tr><td>$fecha_creacion</td></tr>
 					 <tr><td>$cant_jugadores</td></tr>
 					  <tr><td>$Torneo</td></tr>
-		</table>";
+		</table>
+		<div id='efecto'>
+			<input type='button' id='boton' value='Volver' onclick=location.href='BORRAR_REGISTROS.php';>
+		</div>
+		</div>";
 	  }
    
    

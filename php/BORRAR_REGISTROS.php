@@ -2,51 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-
-<title>Documento sin título</title>
-<style>
-    h1 {
-		text-align: center;
-		background-color:#030;
-		color:#FFF;
-	    margin:2% auto;
-		width:80%;
-		
-	}
-	h2{
-		text-align:center;
-		font-family:"Comic Sans MS", cursive;
-		background-color:#030;
-		color:#FFF;
-		width:40%;
-    	margin:0 auto;
-	}
-	html{
-		background-image:url(imagenes/Deporte.jpg);
-		background-size:100%;
-	
-	}	
-	form{
-		background-color:#039;
-		width:40%;
-	    margin: 0 auto;
-	}
-	label{
-	   color:#FFF;
-	   font-family:"Comic Sans MS", cursive;
-	   font-size:18px;
-	}
-	#BOTONES{
-		width:auto;
-	}
-</style>
+<title>Eliminar Registros</title>
 
 </head>
 
-<body>
+<body background="imagenes/fondo.jpg">
+
 <?php
-      echo "<h1  style='text-align:center'>ELIMINA CUALQUIER REGISTRO DE LA BASE DE DATOS</h1>";
+      echo "<h1 id='titulo'>Eliminando registros de la base de datos</h1>";
 	  try{
     $base=new PDO('mysql:host=localhost; dbname=torneo_dep','root','');
 	$base->exec("SET CHARACTER SET utf8");
@@ -54,6 +19,7 @@
 	
 	$resultado=$base->prepare($sql);
 	$resultado->execute(array());
+	 echo "<div id='principal'>";
 	 echo "<h2 >Registros de torneo</h2>";
 	while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
 	   echo"<form action='#' method='post'> 
@@ -71,20 +37,20 @@
 					    <td><input type='text' name='cant_jugadores' value='".$registro["cant_jugadores"]."'></input><td>
 				    </tr>
 				     <tr>
-					    <td><label> torneo :</label></td>
+					    <td><label> Torneo :</label></td>
 						<td><input type='text'  name='torneo' value='".$registro["torneo"]."'></input></td>
 					</tr>
 					<tr>
 					    <td><label> Categoria :</label></td>
 						<td><input type='text' name='categoria' value='".$registro["categoria"]."'></input><td>
 					</tr>
-					   
-					<tr>
+					  </table> 
 					
-					  <td><input type='submit' id='BOTONES' value='actualizar' onclick=this.form.action='ACTUALIZAR_EQ.php'></td>
-					   <td><input type='submit' id='BOTONES' value='eliminar' onclick=this.form.action='ELIMINAR_EQ.php' ></td>
-					</tr> 
-	            </table>
+					 <div id='efecto'>
+					  <input type='submit' id='boton' value='Actualizar' onclick=this.form.action='ACTUALIZAR_EQ.php'></td>
+					  <input type='submit' id='boton' value='Eliminar' onclick=this.form.action='ELIMINAR_EQ.php' >
+					 </div>
+	            
 	   </form>";
 	   echo "<br>";
 	}
@@ -103,13 +69,13 @@
 				   <tr>  
 				        <td> <label> Fecha : </label></td>
 	                    <td><input type='date' name='fecha' value='".$registro["fecha"]."'></input><td> 
-	               </tr>			
-					<tr>
+	               </tr></table>			
 					
-					  <td><input type='submit' value='actualizar' onclick=this.form.action='ACTUALIZAR_TORNEO.php'></td>
-					   <td><input type='submit' value='eliminar' onclick=this.form.action='ELIMINAR_TORNEO.php' ></td>
-					</tr> 
-	            </table>
+					<div id='efecto'>
+					  <input type='submit' id='boton' value='Actualizar' onclick=this.form.action='ACTUALIZAR_TORNEO.php'>
+					  <input type='submit' value='Eliminar' id='boton' onclick=this.form.action='ELIMINAR_TORNEO.php' >
+					</div> 
+	            
 	   </form>";
 	   echo "<br>";
 	}
@@ -142,24 +108,26 @@
 						<td><input type='text' name='sitio_web' value='".$registro["sitio_web"]."'></input><td>
 					</tr>
 				     <tr>
-					    <td><label> torneo :</label></td>
+					    <td><label> Usuario :</label></td>
 						<td><input type='text'  name='usuario' value='".$registro["usuario"]."'></input></td>
 					</tr>
 					<tr>
-					    <td><label> Categoria :</label></td>
+					    <td><label> Contraseña :</label></td>
 						<td><input type='text' name='clave' value='".$registro["clave"]."'></input><td>
 					</tr>
-					   
-					<tr>
-					
-					  <td><input type='submit' value='actualizar' onclick=this.form.action='ACTUALIZAR_D_USUARIO.php'></td>
-					   <td><input type='submit' value='eliminar' onclick=this.form.action='ELIMINAR_D_USUARIO.php' ></td>
-					</tr> 
-	            </table>
+					  </table> 
+
+					<div id='efecto'>
+					  <input type='submit' id='boton' value='Actualizar' onclick=this.form.action='ACTUALIZAR_D_USUARIO.php'>
+					   <input type='submit' id='boton' value='Eliminar' onclick=this.form.action='ELIMINAR_D_USUARIO.php' >
+					</div>
+	            
 	   </form>";
-	   echo "<br>";
+	   
 	}
-	
+	echo "<br><br><br><br><div id='efecto'>
+			<input type='button' id='boton' value='Volver' onclick=location.href='acceso_admin.php';>
+		</div>";
    }
    catch(Exception $e){
 	    die ('Error' . $e->GetMessage());
@@ -169,5 +137,6 @@
 
 
 ?>
+</div>
 </body>
 </html>

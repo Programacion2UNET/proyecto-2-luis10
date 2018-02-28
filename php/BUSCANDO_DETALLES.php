@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Detalles</title>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body background="imagenes/fondo.jpg">
+	
 <?php
 	
 	$usuario=$_POST["usuario"];
@@ -19,8 +20,9 @@
 	$resultado->execute(array(":usu"=>$usuario));
 	$band=false;
 	while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
-	  echo "<h1>Detalles de la inscripcion del usuario : $usuario</h1>"; 	
-	  echo"<p>Usuario : ".$registro['usuario']."</p>";
+	  
+	  echo "<h1 id='titulo'>Detalles de la inscripcion del usuario : $usuario</h1>"; 	
+	  echo"<div id='principal'><p>Usuario : ".$registro['usuario']."</p>";
 	  echo"<p>Clave : ".$registro['clave']."</p>";
 	  echo"<p>Correo : ".$registro['correo']."</p>";
 	  echo"<p>Sitio Web : ".$registro['sitio_web']."</p>";
@@ -41,5 +43,9 @@
 
 
 ?>
+			<div id="efecto">
+             <input type="button" name="b" id="boton" value="Volver" onclick="location.href='acceso_admin.php';"> 
+           </div>
+</div>
 </body>
 </html>
