@@ -2,13 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<title>Listado Equipos</title>
+<style>
+    label{
+		color:#FFF;
+		font-size:24px;
+	
+	}
+
+
+</style>
    <script src="css/jquery-3.2.1.min.js"></script>
 <script>
 
 	  function imprimir() {
          
-            document.write(" <form action='VER_LISTADO.php'  method='post' id='formulario'><table><tr><td><label for='torneo'>Torneo</label></td> <td><select  name='torneo' id='Torneo'></select> </td>      </tr>        <tr>       <td><input class='boton' type='submit' value='Buscar'  /></td>     </tr>     </table>     </form>");   
+            document.write(" <form action='VER_LISTADO.php'  method='post' id='FORMULARIO'><table><tr><td><label  for='torneo'>Torneo</label></td> <td><select  name='torneo' id='Torneo'></select> </td>      </tr>        <tr>       <td><input class='boton' id='efecto' type='submit' value='Buscar'  /></td>     </tr>     </table>     </form>");   
 		      
 		  }
 	 function insertar(torneo){
@@ -22,8 +32,8 @@
 </head>
 
 
-<body>
-<h1>Informacion de equipos de torneos</h1>
+<body  background="imagenes/fondo.jpg">
+<h1 id="titulo">Informacion de equipos de torneos</h1>
 <?php
 
 	try{

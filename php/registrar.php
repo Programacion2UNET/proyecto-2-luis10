@@ -1,8 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Registros</title>
 </head>
 
 <body background="imagenes/fondo.jpg">
@@ -52,7 +53,7 @@
       // echo $registros["categoria"].$registros['torneo'];
 	}
 	if($band==1){
-       echo"<p >NO SE PUEDE REGISTRAR </p>";
+       echo"<p id='titulo' style='text-align:center'>NO SE PUEDE REGISTRAR </p>";
 		$resultado->closeCursor();
         $resultados->closeCursor();
 	}
@@ -87,9 +88,9 @@
       $SQ="SELECT * FROM registro_torneo where usuario =:usu AND clave =:cla ";
         $resultad=$base->prepare($SQ);
 		$resultad->execute(array(":usu"=>$usuario,":cla"=>$clave));
-		echo "<h1>Listado de torneos inscritos</h1>";
+		echo "<h1 id='titulo'>Listado de torneos inscritos</h1>";
 	while($registros=$resultad->fetch(PDO::FETCH_ASSOC)){
-	     echo "El Equipo : ".$registros["nom_equipo"]." esta registrado en el torneo : ".$registros["torneo"] ."  Categoria :".$registros["categoria"]."  </br>";
+	     echo "<h2>El Equipo : ".$registros["nom_equipo"]." esta registrado en el torneo : ".$registros["torneo"] ."  Categoria :".$registros["categoria"]." </h2> </br>";
      
 	}
    }

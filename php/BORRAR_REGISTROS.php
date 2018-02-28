@@ -2,20 +2,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
 <title>Documento sin título</title>
 <style>
-   .torneo{
-	  
-	  
+    h1 {
+		text-align: center;
+		background-color:#030;
+		color:#FFF;
+	    margin:2% auto;
+		width:80%;
+		
 	}
-
+	h2{
+		text-align:center;
+		font-family:"Comic Sans MS", cursive;
+		background-color:#030;
+		color:#FFF;
+		width:40%;
+    	margin:0 auto;
+	}
+	html{
+		background-image:url(imagenes/Deporte.jpg);
+		background-size:100%;
+	
+	}	
+	form{
+		background-color:#039;
+		width:40%;
+	    margin: 0 auto;
+	}
+	label{
+	   color:#FFF;
+	   font-family:"Comic Sans MS", cursive;
+	   font-size:18px;
+	}
+	#BOTONES{
+		width:auto;
+	}
 </style>
 
 </head>
 
 <body>
 <?php
-      echo "<h1 style='text-align:center'>ELIMINA CUALQUIER REGISTRO INGRESADO A LA BASE DE DATOS</h1>";
+      echo "<h1  style='text-align:center'>ELIMINA CUALQUIER REGISTRO DE LA BASE DE DATOS</h1>";
 	  try{
     $base=new PDO('mysql:host=localhost; dbname=torneo_dep','root','');
 	$base->exec("SET CHARACTER SET utf8");
@@ -50,8 +81,8 @@
 					   
 					<tr>
 					
-					  <td><input type='submit' value='actualizar' onclick=this.form.action='ACTUALIZAR_EQ.php'></td>
-					   <td><input type='submit' value='eliminar' onclick=this.form.action='ELIMINAR_EQ.php' ></td>
+					  <td><input type='submit' id='BOTONES' value='actualizar' onclick=this.form.action='ACTUALIZAR_EQ.php'></td>
+					   <td><input type='submit' id='BOTONES' value='eliminar' onclick=this.form.action='ELIMINAR_EQ.php' ></td>
 					</tr> 
 	            </table>
 	   </form>";

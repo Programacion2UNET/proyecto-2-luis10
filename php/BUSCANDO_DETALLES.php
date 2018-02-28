@@ -3,6 +3,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin título</title>
+<style>
+	
+	html{
+		background-image:url(imagenes/buscador.jpg);
+		background-size:100%;
+		
+	}
+	h1{
+		text-align:center;
+		font-family:"Comic Sans MS", cursive;
+		font-size:36px;
+		color:#03C;
+	  
+	}
+	p{
+		margin:0 auto;
+		width:50%;
+		text-align:center;
+		font-size:36px;
+		font-family:"MS Serif", "New York", serif;
+		font-style:italic;
+		color:#FFF;
+		background-color:#03C;
+		
+		
+	}
+	
+</style>
 </head>
 
 <body>

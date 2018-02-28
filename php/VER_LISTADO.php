@@ -1,11 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Informacion</title>
+<style>
+	
+	form{
+		background-color:#333;
+		width:40%;
+	    margin: 0 auto;
+	}
+	label{
+	   color:#FFF;
+	   font-family:"Comic Sans MS", cursive;
+	   font-size:18px;
+	}
+	#BOTONES{
+		width:auto;
+	}
+</style>
 </head>
 
-<body>
+<body  background="imagenes/fondo.jpg">
 <?php
 		
 	$torneo=$_POST["torneo"];
@@ -16,10 +33,10 @@
 	
 	$resultado=$base->prepare($sql);
 	$resultado->execute(array(":torneo"=>$torneo));
-	echo "<h1>Equipos registrados en el torneo $torneo</h1>";
+	echo "<h1 id='titulo'>Equipos registrados en el torneo $torneo</h1>";
 	while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
 	  	
-		   echo"<form action='#' method='post'> 
+		   echo"<form action='#' method='post' > 
 	          <table>
 	               <tr> 
 	                  <td> <label> Equipo :</label></td>
@@ -44,8 +61,8 @@
 					   
 					<tr>
 					
-					  <td><input type='submit' value='actualizar' onclick=this.form.action='ACTUALIZAR_EQ.php'></td>
-					   <td><input type='submit' value='eliminar' onclick=this.form.action='ELIMINAR_EQ.php' ></td>
+					  <td><input  type='submit' id='BOTONES' value='actualizar' onclick=this.form.action='ACTUALIZAR_EQ.php'></td>
+					   <td><input type='submit'  id='BOTONES' value='eliminar' onclick=this.form.action='ELIMINAR_EQ.php' ></td>
 					</tr> 
 	            </table>
 	   </form>";

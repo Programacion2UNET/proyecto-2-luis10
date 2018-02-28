@@ -2,7 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Eliminar</title>
+<style>
+        html{
+			background-image:url(imagenes/Deporte.jpg);
+			background-size:100%;
+		   
+		}
+       
+		h1{
+			margin:0 auto;
+			text-align:center;
+			background-color:#030;
+			color:#FFF;
+			font-style:italic;
+			font-size:36px;
+			font-family:"Comic Sans MS", cursive;
+			width:40%;
+			border-radius:45%;
+		  
+		}
+
+
+</style>
+
 </head>
 
 <body>
@@ -25,7 +48,7 @@
 	   echo " Apellido " . $registro["APELLIDO"];
 	   echo "<br>";
 	}*/
-	echo"Registro eliminado";
+	echo"<h1>Registro eliminado</h1>";
 	$resultado->closeCursor();
    }
    catch(Exception $e){

@@ -6,16 +6,22 @@
        <style type="text/css">
 		 
 		 html{
-   	 	   background-color: green;
+			 background-image:url(imagenes/administrador.jpg);
+			 background-size:100%;
    	     }
 		 #portada{
-   	 	 width:50%;  
-   	 	 background-color: orange;
+   	 	 width:50%;
+		 
+		 background-color:#666;
+		   
+		 
+   	 	
    	    }
 		 .accseso{
 	
 			 text-decoration: none;
 			 font-size: 30px;
+			 
 			 color: white;
 		 }
 		 li{
@@ -25,6 +31,7 @@
 			text-align: center;
 			 position:absolute;
 			 left: 25%;
+			 top:30%;
 		 }
 		 a:hover{
 			color: black;
@@ -33,7 +40,7 @@
 		  
          h1{
       	  text-align: center;
-      	  color: white;
+      	  color: clack;
       	  font-family: cursive;
          }
 

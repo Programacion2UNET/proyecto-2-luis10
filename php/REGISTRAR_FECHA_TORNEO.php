@@ -2,7 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Registro</title>
+<style>
+	
+	html{
+		background-image:url(imagenes/guardar.png);
+		
+		
+	}
+	p{
+		text-align:center;
+		font-family:"Comic Sans MS", cursive;
+		font-size:36px;
+		color:#006;
+	  
+	}
+
+
+	
+</style>
 </head>
 
 <body>

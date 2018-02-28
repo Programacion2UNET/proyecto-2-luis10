@@ -39,7 +39,7 @@
 	  
 	}
 	
-	 if($ecn==true && ($usuario!="#".$auxausuario && $clave!="1234") ){
+	 if($ecn==true && ($usuario!="#".$auxausuario ) ){
 		
 	   $resultado->closeCursor();
 	   $base=null;
